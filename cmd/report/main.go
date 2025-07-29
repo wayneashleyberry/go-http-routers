@@ -96,9 +96,9 @@ func main() {
 		return a.LastReleaseAt.After(*b.LastReleaseAt)
 	})
 
-	fmt.Println("# Go HTTP Router Repositories")
+	fmt.Println("# Go HTTP Routers")
 
-	fmt.Println("The list of routers being investigated here are taken from https://github.com/avelino/awesome-go?tab=readme-ov-file#routers.")
+	fmt.Println("The list of routers being investigated here are taken from [awesome-go](https://github.com/avelino/awesome-go?tab=readme-ov-file#routers).")
 
 	printMarkdownTable(
 		"Qualified Routers",

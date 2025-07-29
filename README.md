@@ -1,6 +1,6 @@
-# Go HTTP Router Repositories
+# Go HTTP Routers
 
-The list of routers being investigated here are taken from https://github.com/avelino/awesome-go?tab=readme-ov-file#routers.
+The list of routers being investigated here are taken from [awesome-go](https://github.com/avelino/awesome-go?tab=readme-ov-file#routers).
 
 ## Qualified Routers (4)
 
