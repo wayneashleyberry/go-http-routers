@@ -14,12 +14,14 @@ type RoutersJSON struct {
 }
 
 type RepoData struct {
-	URL           string     `json:"url"`
-	Exists        bool       `json:"exists"`
-	Archived      bool       `json:"archived,omitempty"`
-	Stars         int        `json:"stars,omitempty"`
-	HasRelease    bool       `json:"has_release"`
-	LastReleaseAt *time.Time `json:"last_release_at,omitempty"`
+	URL              string     `json:"url"`
+	Exists           bool       `json:"exists"`
+	Archived         bool       `json:"archived,omitempty"`
+	Stars            int        `json:"stars,omitempty"`
+	HasRelease       bool       `json:"has_release"`
+	LastReleaseAt    *time.Time `json:"last_release_at,omitempty"`
+	OpenIssues       int        `json:"open_issues"`
+	OpenPullRequests int        `json:"open_pull_requests"`
 }
 
 func runGHAPI(path string) ([]byte, error) {
@@ -60,6 +62,39 @@ func getRepoInfo(owner, repo string) (*RepoData, error) {
 		if err := json.Unmarshal(output, &releaseResp); err == nil {
 			data.HasRelease = true
 			data.LastReleaseAt = &releaseResp.PublishedAt
+		}
+	}
+
+	// Get open issues count
+	issuesPath := fmt.Sprintf("repos/%s/%s/issues?state=open&per_page=1", owner, repo)
+	output, err = runGHAPI(issuesPath)
+	if err == nil {
+		var issues []interface{}
+		if err := json.Unmarshal(output, &issues); err == nil {
+			// GitHub API paginates, but we can get total from the Link header or just count returned items for small repos
+			// For simplicity, use the total_count from the search API
+			searchIssuesPath := fmt.Sprintf("search/issues?q=repo:%s/%s+type:issue+state:open", owner, repo)
+			output, err = runGHAPI(searchIssuesPath)
+			if err == nil {
+				var searchResp struct {
+					TotalCount int `json:"total_count"`
+				}
+				if err := json.Unmarshal(output, &searchResp); err == nil {
+					data.OpenIssues = searchResp.TotalCount
+				}
+			}
+		}
+	}
+
+	// Get open pull requests count
+	prsPath := fmt.Sprintf("search/issues?q=repo:%s/%s+type:pr+state:open", owner, repo)
+	output, err = runGHAPI(prsPath)
+	if err == nil {
+		var searchResp struct {
+			TotalCount int `json:"total_count"`
+		}
+		if err := json.Unmarshal(output, &searchResp); err == nil {
+			data.OpenPullRequests = searchResp.TotalCount
 		}
 	}
 

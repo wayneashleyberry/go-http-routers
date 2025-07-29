@@ -10,12 +10,14 @@ import (
 
 // Shared struct from previous script
 type RepoData struct {
-	URL           string     `json:"url"`
-	Exists        bool       `json:"exists"`
-	Archived      bool       `json:"archived,omitempty"`
-	Stars         int        `json:"stars,omitempty"`
-	HasRelease    bool       `json:"has_release"`
-	LastReleaseAt *time.Time `json:"last_release_at,omitempty"`
+	URL              string     `json:"url"`
+	Exists           bool       `json:"exists"`
+	Archived         bool       `json:"archived,omitempty"`
+	Stars            int        `json:"stars,omitempty"`
+	HasRelease       bool       `json:"has_release"`
+	LastReleaseAt    *time.Time `json:"last_release_at,omitempty"`
+	OpenIssues       int        `json:"open_issues"`
+	OpenPullRequests int        `json:"open_pull_requests"`
 }
 
 func isQualified(repo RepoData) bool {
@@ -29,8 +31,8 @@ func printMarkdownTable(title string, criteria string, repos []RepoData) {
 	fmt.Printf("## %s (%d)\n\n", title, len(repos))
 	fmt.Println(criteria)
 	fmt.Println()
-	fmt.Println("| Repo | Stars | Archived | Last Release |")
-	fmt.Println("|------|-------|----------|---------------|")
+	fmt.Println("| Repo | Stars | Archived | Last Release | Open Issues | Open PRs |")
+	fmt.Println("|------|-------|----------|---------------|------------|----------|")
 	for _, r := range repos {
 		archived := "No"
 		if r.Archived {
@@ -40,8 +42,8 @@ func printMarkdownTable(title string, criteria string, repos []RepoData) {
 		if r.LastReleaseAt != nil {
 			release = r.LastReleaseAt.Format("2006-01-02")
 		}
-		fmt.Printf("| [%s](%s) | %d | %s | %s |\n",
-			repoNameFromURL(r.URL), r.URL, r.Stars, archived, release)
+		fmt.Printf("| [%s](%s) | %d | %s | %s | %d | %d |\n",
+			repoNameFromURL(r.URL), r.URL, r.Stars, archived, release, r.OpenIssues, r.OpenPullRequests)
 	}
 	fmt.Println()
 }
@@ -95,6 +97,8 @@ func main() {
 	})
 
 	fmt.Println("# Go HTTP Router Repositories")
+
+	fmt.Println("The list of routers being investigated here are taken from https://github.com/avelino/awesome-go?tab=readme-ov-file#routers.")
 
 	printMarkdownTable(
 		"Qualified Routers",
