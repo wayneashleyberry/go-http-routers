@@ -1,0 +1,186 @@
+[
+  {
+    "url": "https://github.com/gernest/alien",
+    "exists": true,
+    "stars": 134,
+    "has_release": false
+  },
+  {
+    "url": "https://github.com/GuilhermeCaruso/bellt",
+    "exists": true,
+    "stars": 54,
+    "has_release": false
+  },
+  {
+    "url": "https://github.com/go-zoo/bone",
+    "exists": true,
+    "stars": 1287,
+    "has_release": true,
+    "last_release_at": "2019-05-06T14:37:24Z"
+  },
+  {
+    "url": "https://github.com/claygod/Bxog",
+    "exists": true,
+    "stars": 101,
+    "has_release": false
+  },
+  {
+    "url": "https://github.com/go-chi/chi",
+    "exists": true,
+    "stars": 20211,
+    "has_release": true,
+    "last_release_at": "2025-06-20T13:31:52Z"
+  },
+  {
+    "url": "https://github.com/buaazp/fasthttprouter",
+    "exists": true,
+    "stars": 871,
+    "has_release": true,
+    "last_release_at": "2016-12-20T04:31:23Z"
+  },
+  {
+    "url": "https://github.com/razonyang/fastrouter",
+    "exists": true,
+    "stars": 23,
+    "has_release": true,
+    "last_release_at": "2017-11-03T15:05:25Z"
+  },
+  {
+    "url": "https://github.com/bmf-san/goblin",
+    "exists": true,
+    "stars": 80,
+    "has_release": true,
+    "last_release_at": "2024-12-26T10:28:50Z"
+  },
+  {
+    "url": "https://github.com/gocraft/web",
+    "exists": true,
+    "stars": 1514,
+    "has_release": true,
+    "last_release_at": "2014-09-03T02:16:41Z"
+  },
+  {
+    "url": "https://github.com/goji/goji",
+    "exists": true,
+    "stars": 971,
+    "has_release": true,
+    "last_release_at": "2018-11-13T16:48:48Z"
+  },
+  {
+    "url": "https://github.com/golobby/router",
+    "exists": true,
+    "stars": 22,
+    "has_release": true,
+    "last_release_at": "2022-03-22T14:58:26Z"
+  },
+  {
+    "url": "https://github.com/goroute/route",
+    "exists": true,
+    "stars": 9,
+    "has_release": true,
+    "last_release_at": "2019-08-20T05:58:28Z"
+  },
+  {
+    "url": "https://github.com/vardius/gorouter",
+    "exists": true,
+    "stars": 153,
+    "has_release": true,
+    "last_release_at": "2020-09-10T14:10:04Z"
+  },
+  {
+    "url": "https://github.com/gowww/router",
+    "exists": true,
+    "stars": 185,
+    "has_release": false
+  },
+  {
+    "url": "https://github.com/julienschmidt/httprouter",
+    "exists": true,
+    "stars": 16942,
+    "has_release": true,
+    "last_release_at": "2019-09-30T07:34:39Z"
+  },
+  {
+    "url": "https://github.com/dimfeld/httptreemux",
+    "exists": true,
+    "stars": 619,
+    "has_release": true,
+    "last_release_at": "2022-10-26T23:50:21Z"
+  },
+  {
+    "url": "https://github.com/go-playground/lars",
+    "exists": true,
+    "stars": 384,
+    "has_release": true,
+    "last_release_at": "2017-10-31T12:52:20Z"
+  },
+  {
+    "url": "https://github.com/gorilla/mux",
+    "exists": true,
+    "stars": 21505,
+    "has_release": true,
+    "last_release_at": "2023-11-05T02:14:50Z"
+  },
+  {
+    "url": "https://github.com/muir/nchi",
+    "exists": true,
+    "stars": 18,
+    "has_release": true,
+    "last_release_at": "2025-03-14T21:16:59Z"
+  },
+  {
+    "url": "https://github.com/ngamux/ngamux",
+    "exists": true,
+    "stars": 71,
+    "has_release": true,
+    "last_release_at": "2024-12-18T03:25:46Z"
+  },
+  {
+    "url": "https://github.com/go-ozzo/ozzo-routing",
+    "exists": true,
+    "stars": 456,
+    "has_release": true,
+    "last_release_at": "2021-09-11T21:43:46Z"
+  },
+  {
+    "url": "https://github.com/go-playground/pure",
+    "exists": true,
+    "stars": 150,
+    "has_release": true,
+    "last_release_at": "2023-07-13T17:05:28Z"
+  },
+  {
+    "url": "https://github.com/VividCortex/siesta",
+    "exists": true,
+    "stars": 348,
+    "has_release": true,
+    "last_release_at": "2021-04-26T21:52:25Z"
+  },
+  {
+    "url": "https://github.com/husobee/vestigo",
+    "exists": true,
+    "stars": 267,
+    "has_release": true,
+    "last_release_at": "2019-09-25T20:59:07Z"
+  },
+  {
+    "url": "https://github.com/nbari/violetear",
+    "exists": true,
+    "stars": 108,
+    "has_release": true,
+    "last_release_at": "2019-03-31T20:03:08Z"
+  },
+  {
+    "url": "https://github.com/rs/xmux",
+    "exists": true,
+    "stars": 99,
+    "has_release": false
+  },
+  {
+    "url": "https://github.com/xujiajun/gorouter",
+    "exists": true,
+    "stars": 529,
+    "has_release": true,
+    "last_release_at": "2019-03-12T03:58:03Z"
+  }
+]
