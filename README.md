@@ -1,5 +1,7 @@
 # Go HTTP Routers
 
+The list of routers being investigated here are taken from https://github.com/avelino/awesome-go?tab=readme-ov-file#routers.
+
 ## Qualified Routers (4)
 
 These repositories **exist**, have at least one **GitHub release**, and their **latest release is within the past 365 days**. Ordered by star count (descending).
