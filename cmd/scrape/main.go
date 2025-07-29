@@ -65,36 +65,30 @@ func getRepoInfo(owner, repo string) (*RepoData, error) {
 		}
 	}
 
-	// Get open issues count
-	issuesPath := fmt.Sprintf("repos/%s/%s/issues?state=open&per_page=1", owner, repo)
+	// Get open issues count (excluding PRs)
+	issuesPath := fmt.Sprintf("repos/%s/%s/issues?state=open&per_page=100", owner, repo)
 	output, err = runGHAPI(issuesPath)
 	if err == nil {
-		var issues []interface{}
+		var issues []map[string]interface{}
 		if err := json.Unmarshal(output, &issues); err == nil {
-			// GitHub API paginates, but we can get total from the Link header or just count returned items for small repos
-			// For simplicity, use the total_count from the search API
-			searchIssuesPath := fmt.Sprintf("search/issues?q=repo:%s/%s+type:issue+state:open", owner, repo)
-			output, err = runGHAPI(searchIssuesPath)
-			if err == nil {
-				var searchResp struct {
-					TotalCount int `json:"total_count"`
-				}
-				if err := json.Unmarshal(output, &searchResp); err == nil {
-					data.OpenIssues = searchResp.TotalCount
+			count := 0
+			for _, issue := range issues {
+				// Only count if not a pull request
+				if _, isPR := issue["pull_request"]; !isPR {
+					count++
 				}
 			}
+			data.OpenIssues = count
 		}
 	}
 
 	// Get open pull requests count
-	prsPath := fmt.Sprintf("search/issues?q=repo:%s/%s+type:pr+state:open", owner, repo)
+	prsPath := fmt.Sprintf("repos/%s/%s/pulls?state=open&per_page=100", owner, repo)
 	output, err = runGHAPI(prsPath)
 	if err == nil {
-		var searchResp struct {
-			TotalCount int `json:"total_count"`
-		}
-		if err := json.Unmarshal(output, &searchResp); err == nil {
-			data.OpenPullRequests = searchResp.TotalCount
+		var prs []interface{}
+		if err := json.Unmarshal(output, &prs); err == nil {
+			data.OpenPullRequests = len(prs)
 		}
 	}
 
