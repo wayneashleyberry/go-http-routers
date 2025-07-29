@@ -1,0 +1,31 @@
+{
+  "routers": [
+    "https://github.com/gernest/alien",
+    "https://github.com/GuilhermeCaruso/bellt",
+    "https://github.com/go-zoo/bone",
+    "https://github.com/claygod/Bxog",
+    "https://github.com/go-chi/chi",
+    "https://github.com/buaazp/fasthttprouter",
+    "https://github.com/razonyang/fastrouter",
+    "https://github.com/bmf-san/goblin",
+    "https://github.com/gocraft/web",
+    "https://github.com/goji/goji",
+    "https://github.com/golobby/router",
+    "https://github.com/goroute/route",
+    "https://github.com/vardius/gorouter",
+    "https://github.com/gowww/router",
+    "https://github.com/julienschmidt/httprouter",
+    "https://github.com/dimfeld/httptreemux",
+    "https://github.com/go-playground/lars",
+    "https://github.com/gorilla/mux",
+    "https://github.com/muir/nchi",
+    "https://github.com/ngamux/ngamux",
+    "https://github.com/go-ozzo/ozzo-routing",
+    "https://github.com/go-playground/pure",
+    "https://github.com/VividCortex/siesta",
+    "https://github.com/husobee/vestigo",
+    "https://github.com/nbari/violetear",
+    "https://github.com/rs/xmux",
+    "https://github.com/xujiajun/gorouter"
+  ]
+}
